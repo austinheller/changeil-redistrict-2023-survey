@@ -1,7 +1,20 @@
 @use 'bootstrap-reboot';
 @use 'bootstrap-grid';
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 #candidates-list {
+  height: 100%;
+  overflow: scroll;
   .office-button {
     appearance: none;
     display: block;
@@ -13,6 +26,52 @@
     text-align: left;
     &.selected {
       background-color: #beaedb;
+    }
+  }
+}
+
+#responses {
+  height: 100%;
+  overflow: scroll;
+  position: relative;
+  .placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #666;
+    text-align: center;
+  }
+  #entries-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    button {
+      background-color: #8054cf;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      width: 40px;
+      &:active {
+        background-color: hsl(262, 49%, 51%);
+      }
+      &:first-of-type {
+        margin-right: 1rem;
+      }
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+  .entry {
+    .question {
+      margin-bottom: 2rem;
+      p {
+        margin-bottom: 0.67rem;
+      }
     }
   }
 }

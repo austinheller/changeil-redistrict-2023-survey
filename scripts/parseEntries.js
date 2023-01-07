@@ -14,7 +14,11 @@ function parseEntries(entries) {
   );
   container.appendChild(officesEl);
   const responsesEl = (
-    <div id="responses" class="col col-xs-12 col-sm-8 col-md-9"></div>
+    <div id="responses" class="col col-xs-12 col-sm-8 col-md-9">
+      <p class="placeholder">
+        Select an office to see the candidates' answers.
+      </p>
+    </div>
   );
   container.appendChild(responsesEl);
   // Get office names
@@ -62,8 +66,9 @@ function parseEntries(entries) {
     });
   });
   function showResponses(officeName) {
+    const responsesContainer = document.querySelector("#responses");
     // Clear existing entries
-    document.querySelector("#responses").innerHTML = "";
+    responsesContainer.innerHTML = "";
     // Add new entries
     let entryIndex = 0;
     const entryEls = [];
@@ -144,8 +149,8 @@ function parseEntries(entries) {
     // Add navigation
     const entriesTotal = entryIndex;
     let currentIndex = 1;
-    const prevButton = <button id="entries-prev">Previous</button>;
-    const nextButton = <button id="entries-next">Next</button>;
+    const prevButton = <button id="entries-prev">&laquo;</button>;
+    const nextButton = <button id="entries-next">&raquo;</button>;
     prevButton.addEventListener("click", () => {
       selectEntry("prev");
     });
@@ -198,6 +203,7 @@ function parseEntries(entries) {
     );
     responsesEl.appendChild(entriesEl);
     selectEntry();
+    responsesContainer.scrollTo(0, 0);
   }
 }
 
