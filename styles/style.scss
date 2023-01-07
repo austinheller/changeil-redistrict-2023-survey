@@ -1,0 +1,18 @@
+@use 'bootstrap-reboot';
+@use 'bootstrap-grid';
+
+#candidates-list {
+  .office-button {
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    &.selected {
+      background-color: #beaedb;
+    }
+  }
+}

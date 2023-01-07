@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+main.min.js
+main.min.js.LICENSE.txt
+style.min.css
+style.min.js
