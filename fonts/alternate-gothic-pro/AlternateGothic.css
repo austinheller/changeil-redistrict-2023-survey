@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Alternate Gothic 1";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./AlternateGothic-No1.woff2") format("woff2"),
+    url("./AlternateGothic-No1.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Alternate Gothic 2";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./AlternateGothic-No2.woff2") format("woff2"),
+    url("./AlternateGothic-No2.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Alternate Gothic 3";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./AlternateGothic-No3.woff2") format("woff2"),
+    url("./AlternateGothic-No3.woff") format("woff");
+}

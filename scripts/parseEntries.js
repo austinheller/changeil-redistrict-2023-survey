@@ -9,12 +9,10 @@ const responsesUrl =
 function parseEntries(entries) {
   const container = document.querySelector("#app");
   // Set up elements
-  const officesEl = (
-    <div id="candidates-list" class="col col-xs-12 col-sm-4 col-md-3"></div>
-  );
+  const officesEl = <div id="candidates-list"></div>;
   container.appendChild(officesEl);
   const responsesEl = (
-    <div id="responses" class="col col-xs-12 col-sm-8 col-md-9">
+    <div id="responses">
       <p class="placeholder">
         Select an office to see the candidates' answers.
       </p>
@@ -149,8 +147,16 @@ function parseEntries(entries) {
     // Add navigation
     const entriesTotal = entryIndex;
     let currentIndex = 1;
-    const prevButton = <button id="entries-prev">&laquo;</button>;
-    const nextButton = <button id="entries-next">&raquo;</button>;
+    const prevButton = (
+      <button id="entries-prev">
+        &laquo; Previous<span class="hide-mobile"> Candidate</span>
+      </button>
+    );
+    const nextButton = (
+      <button id="entries-next">
+        Next<span class="hide-mobile"> Candidate</span> &raquo;
+      </button>
+    );
     prevButton.addEventListener("click", () => {
       selectEntry("prev");
     });

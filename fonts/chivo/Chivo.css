@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Chivo";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./Chivo-Regular.woff2") format("woff2"),
+    url("./Chivo-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Chivo";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./Chivo-Bold.woff2") format("woff2"),
+    url("./Chivo-Bold.woff") format("woff");
+}
