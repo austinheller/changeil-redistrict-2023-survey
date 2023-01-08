@@ -46,8 +46,11 @@ body {
     text-align: left;
     font-weight: 500;
     font-size: 0.76rem;
+    &:hover {
+      background-color: #eee;
+    }
     &.selected {
-      background-color: #beaedb;
+      background-color: #c7bbde;
     }
     @include breakpoints.sm-width {
       font-size: 1rem;
@@ -92,15 +95,15 @@ body {
     button {
       flex-basis: 50%;
       flex-grow: 0;
-      background-color: #ececed;
-      color: rgb(19, 19, 19);
+      background-color: #8054cf;
+      color: white;
       font-size: 0.75rem;
       font-weight: 400;
       border: none;
-      border: 1px solid #ccc;
+      border: 1px solid #57329c;
       border-radius: 8px;
-      &:active {
-        background-color: #ddd;
+      &:active:not(:disabled) {
+        background-color: #663ab7;
       }
       &:first-of-type {
         margin-right: 0.9rem;
