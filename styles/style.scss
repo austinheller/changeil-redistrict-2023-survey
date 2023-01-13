@@ -21,6 +21,10 @@ body {
   }
 }
 
+body {
+  border-top: 1px solid #ccc;
+}
+
 #app {
   width: 100%;
   height: 100%;
@@ -127,6 +131,11 @@ body {
     p,
     li {
       font-family: "Source Serif 4 Sm", Georgia, serif;
+      &.no-response {
+        color: #444;
+        font-style: italic;
+        font-size: 1.2rem;
+      }
     }
     .question {
       margin-bottom: 2rem;
