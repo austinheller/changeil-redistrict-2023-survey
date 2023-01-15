@@ -94,20 +94,22 @@ function parseEntries(entries) {
   // Set focus
   setAppFocus("menu");
   // Should we select an entry based on the hash?
-  const anchors = window.location.hash.split(";");
+  const anchors = window.location.hash.split(";;");
   if (anchors.length > 1) {
-    console.log(anchors);
     let office = anchors[0],
       name = anchors[1];
     office = office
-      .replace("#Office_", "")
+      .replace("#", "")
       .replace(/_/g, " ")
       .replace(/(&quot;)/g, '"')
+      .replace(/&ldquo;/g, "“")
+      .replace(/&rdquo;/g, "”")
       .replace(/(&#039;)/g, "'");
     name = name
-      .replace("Name_", "")
       .replace(/_/g, " ")
       .replace(/(&quot;)/g, '"')
+      .replace(/&ldquo;/g, "“")
+      .replace(/&rdquo;/g, "”")
       .replace(/(&#039;)/g, "'");
     responsesEl.setAttribute("data-current-office", office);
     selectEntry(name, entries);
