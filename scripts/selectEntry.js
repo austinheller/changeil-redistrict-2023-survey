@@ -3,6 +3,7 @@ import getCandidatesForOffice from "./getCandidatesForOffice.js";
 import questions from "./questions.js";
 import setAppFocus from "./setAppFocus.js";
 import getSocialMediaLink from "./getSocialMediaLink.js";
+import sendFocusStatus from "./sendFocusStatus.js";
 
 /** @jsx createElement */
 /** @jsxFrag createFragment */
@@ -181,13 +182,15 @@ export default function selectEntry(selector = "", entries) {
   // Set app focus
   setAppFocus("responses");
   // Set sidebar focus
+  const name = newEntry.getAttribute("data-name");
   const sidebar = document.querySelector(
     `#candidates-list .office[data-office="${office}"]`
   );
-  const candidateInBar = sidebar.querySelector(
-    `[data-candidate="${newEntry.getAttribute("data-name")}"]`
-  );
+  const candidateInBar = sidebar.querySelector(`[data-candidate="${name}"]`);
   sidebar.classList.add("selected");
   candidateInBar.classList.add("selected");
-  return newEntry;
+  // Add candidate name to responses el
+  responsesEl.setAttribute("data-current-candidate", name);
+  // Send status
+  sendFocusStatus(office, name);
 }

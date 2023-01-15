@@ -1,6 +1,9 @@
 @use 'bootstrap-reboot';
 @use 'breakpoints';
 
+$separator-color: #ddd;
+$purple: #8054cf;
+
 html {
   font-size: 16px;
   @include breakpoints.sm-width {
@@ -22,11 +25,8 @@ body {
 }
 
 body {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $separator-color;
 }
-
-$separator-color: #e1e1e1;
-$purple: #8054cf;
 
 #app {
   width: 100%;
@@ -140,9 +140,14 @@ $purple: #8054cf;
   #entries-controls {
     margin-bottom: 1rem;
     position: fixed;
-    top: 0;
+    top: 1px;
     background-color: white;
-    border: 1px solid $separator-color;
+    border-style: solid;
+    border-color: $separator-color;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 1px;
     border-top: none;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -150,9 +155,10 @@ $purple: #8054cf;
     @include breakpoints.sm-width {
       padding-left: 0.75rem;
       padding-right: 0.75rem;
+      border-right-width: 1px;
       width: 360px;
       border-radius: 0 0 10px 0;
-      margin-left: calc(-1rem - 1px);
+      margin-left: calc(-1rem);
     }
     #office-title {
       text-transform: uppercase;

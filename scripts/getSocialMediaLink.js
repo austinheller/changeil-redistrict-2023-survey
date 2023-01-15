@@ -7,7 +7,6 @@ export default function getSocialMediaLink(field, site) {
   let el = "";
   // Check field
   field = field.trim();
-  console.log(field);
   const isUrl = field.match(/https:\/\//g);
   if (isUrl) {
     switch (site) {
