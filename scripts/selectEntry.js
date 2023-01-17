@@ -61,6 +61,12 @@ function loadResponses(entries, officeName) {
       entryContents = (
         <p class="no-response">This candidate did not respond to the survey.</p>
       );
+    } else if (entry["Declined to respond?"] === "TRUE") {
+      entryContents = (
+        <p class="no-response">
+          This candidate declined to participate in the survey.
+        </p>
+      );
     } else {
       entryContents = (
         <div>
